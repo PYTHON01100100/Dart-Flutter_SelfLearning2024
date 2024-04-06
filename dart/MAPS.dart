@@ -1,16 +1,15 @@
 void main() {
-  List<String> names = ['Khalid', 'Ali','Sameer'];
-  List<double> grades = [99.3, 87.7, 65.7];
+  Map<String, double> studentGrades = {
+    'Khalid': 99.3,
+    'Ali': 87.7,
+    'Sameer': 65.7,
+  };
 
-  for (int i = 0; i < names.length; i++) {
-    String name = names[i];
-    double grade = grades[i];
+  studentGrades.forEach((name, grade) {
     String letterGrade = calculateLetterGrade(grade);
     print('$name: $grade => $letterGrade');
-    //$ FOR VARS LIKE NAME
-  }
+  });
 }
-
 
 String calculateLetterGrade(double grade) {
   if (grade >= 95) {
